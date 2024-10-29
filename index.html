@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #000b00;
+				color: white;
+			}
+
+			#tooling {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			textarea {
+				background-color: #000000cc;
+				color: white;
+			}
+		</style>
+		<script src = "./bundle.js"></script>
+	<script defer src="bundle.js"></script></head>
+	<body onload="generator.generate()">
+		<div>
+			<canvas id="levelCanvas" width="2048" height="2048"></canvas>
+		</div>
+		<div id = "tooling">
+			Seed <input type="text" id = "txtSeed" onchange="generator.changeSeed()"/>
+			<input type="checkbox" id = "chkAuto" onchange="generator.changeChecked()"/> Auto
+			<button onclick="debugControls.stepGeneration()">Step</button>
+			<button onclick="location.reload()">Retry</button>
+			<button onclick="generator.retryClean()">Retry Clean</button>
+			<button onclick="generator.toggleMeta()">Meta</button><br>
+			<textarea id = "output" rows="20" cols="40"></textarea>
+		</div>
+	</body>
+</html>
